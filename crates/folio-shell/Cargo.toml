@@ -1,0 +1,21 @@
+[package]
+name = "folio-shell"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Folio's macOS window (Tauri)"
+
+[[bin]]
+name = "Folio"
+path = "src/main.rs"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+folio-app = { path = "../folio-app" }
+folio-core = { path = "../folio-core" }
+tauri = { version = "2", features = ["custom-protocol", "tray-icon", "image-png", "macos-private-api"] }
+tauri-plugin-dialog = "2"
+serde_json.workspace = true
+serde.workspace = true

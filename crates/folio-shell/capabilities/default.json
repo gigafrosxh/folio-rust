@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Folio's windows talk to the Rust side and listen for menu events.",
+  "windows": ["*"],
+  "permissions": ["core:default"]
+}

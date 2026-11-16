@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Folio</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<script src="vendor/katex/katex.min.js" defer></script>
+</head>
+<body>
+<div id="app">
+  <aside id="sidebar">
+    <div class="titlebar-space" data-tauri-drag-region></div>
+    <nav id="nav"></nav>
+    <div class="sidebar-footer">
+      <button class="icon-btn" id="btn-new-folder" title="Neuer Ordner (⇧⌘N)">＋ Ordner</button>
+      <button class="icon-btn" id="btn-settings" title="Einstellungen (⌘,)">⚙︎</button>
+    </div>
+  </aside>
+  <section id="list-pane">
+    <div class="list-header" data-tauri-drag-region>
+      <div class="search-wrap">
+        <input id="search" type="search" placeholder="Suchen (⌥⌘F) – tag: ordner: typ: seit:" autocomplete="off" spellcheck="false">
+        <button id="btn-filter" class="icon-btn small" title="Filter">⚲</button>
+      </div>
+      <div class="list-toolbar">
+        <span id="list-title"></span>
+        <span class="spacer"></span>
+        <button id="btn-sort" class="icon-btn small" title="Sortierung">⇅</button>
+        <button id="btn-new-note" class="icon-btn small" title="Neue Notiz (⌘N)">✎</button>
+      </div>
+      <div id="search-summary" class="search-summary hidden"></div>
+    </div>
+    <div id="note-list" tabindex="0"></div>
+  </section>
+  <main id="main">
+    <div id="tabbar" data-tauri-drag-region></div>
+    <div id="panes">
+      <div class="pane" id="pane-left"></div>
+      <div class="pane hidden" id="pane-right"></div>
+    </div>
+  </main>
+  <aside id="side-panel" class="hidden"></aside>
+</div>
+<div id="format-bar" class="floating hidden"></div>
+<div id="toast-host"></div>
+<div id="modal-host"></div>
+<div id="menu-host"></div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
